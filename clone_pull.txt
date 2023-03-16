@@ -1,0 +1,55 @@
+clone/pull (tarik repo yang ada di gitHub ke git local(pc)
+==========================================================
+$ git remote	perintal untuk menamapilkan nama remote
+origin		nama origin adalah nama default remote 
+==========================================================
+$ git remote -v	(perintah detail dengan menampilkan alamat httpnya)
+origin  https://github.com/apoy0745/google_script.git (fetch)
+origin  https://github.com/apoy0745/google_script.git (push)
+======================================================================
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+note: keterangan status berbeda dengan status git lokal ada tambahan keterangan
+	"Your branch is up to date with 'origin/main'." artinya ini git hasil dari clone
+=========================================================================================
+membuat alias : $ alias graph="git log --all --decorate --oneline --graph"
+=========================================================================================
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+note : Your branch is ahead of 'origin/main' by 1 commit.(artinya kita mendahului commit yang ada di origin/yang ada di github yang kita clone
+
+========================================================================================
+menapilkan configurasi:
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+core.editor='C:/Program Files/Sublime Text/sublime_text.exe' -n -w
+user.name=apoy0745
+user.email=shacklaton@yahoo.co.id
+gui.recentrepo=C:/Users/shack/Desktop/Repo_Git/Repo_Bahasa_C
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+==========================================================================
