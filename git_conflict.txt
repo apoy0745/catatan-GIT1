@@ -1,2 +1,75 @@
 git conflict kl ada perubahan pada file yg sama di baris yg sama
 jadi fileyg ada di github harus di pull/ditarik dl ke pc lalu di perbaiki di pc baru bisa di push
+
+
+contoh :
+=====================
+push ditolak
+=====================
+1.	$ git push
+	To https://github.com/apoy0745/catatan-GIT1.git
+ 	! [rejected]        main -> main (fetch first)
+	error: failed to push some refs to 'https://github.com/apoy0745/catatan-GIT1.git'
+	hint: Updates were rejected because the remote contains work that you do
+	hint: not have locally. This is usually caused by another repository pushing
+	hint: to the same ref. You may want to first integrate the remote changes
+	hint: (e.g., 'git pull ...') before pushing again.
+	hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+======================
+meriksa commit yg di remote sampai mana
+=======================
+$ git fetch
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 674 bytes | 48.00 KiB/s, done.
+From https://github.com/apoy0745/catatan-GIT1
+   b9d1976..c04ad95  main       -> origin/main
+========================================
+meriksa status repo dan ternyata ada 2 commit(antara locl dan git hub file yg sama
+===========================================
+$ git status
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 2 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+nothing to commit, working tree clean
+============================================
+maka ditariklah dl repo yg di github untuk di perbaiki di local
+============================================
+$ git pull
+Auto-merging clone_pull.txt
+CONFLICT (content): Merge conflict in clone_pull.txt
+Automatic merge failed; fix conflicts and then commit the result.
+======================================
+lihat lg statusnya
+============================================
+$ git status
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 2 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   clone_pull.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   git_conflict.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+=====================
+perbaiki file yg konflict
+lau masukan ke staging area
+di commit
+maka brench yg ada aka ke merge otomatis begetoh
+
+
