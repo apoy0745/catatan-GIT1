@@ -1,0 +1,2 @@
+git conflict kl ada perubahan pada file yg sama di baris yg sama
+jadi fileyg ada di github harus di pull/ditarik dl ke pc lalu di perbaiki di pc baru bisa di push
